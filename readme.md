@@ -1,6 +1,8 @@
 # Laravel Shopify
 This package is only for Laravel integration with Shopify's API to make a public app
 
+[![Latest Stable Version](https://poser.pugx.org/bryanyeh/shopify-laravel/v/stable)](https://packagist.org/packages/bryanyeh/shopify-laravel) [![Total Downloads](https://poser.pugx.org/bryanyeh/shopify-laravel/downloads)](https://packagist.org/packages/bryanyeh/shopify-laravel) [![License](https://poser.pugx.org/bryanyeh/shopify-laravel/license)](https://packagist.org/packages/bryanyeh/shopify-laravel)
+
 ## Requirements
 - Laravel 5.4
 - PHP 7+
