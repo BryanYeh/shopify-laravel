@@ -108,7 +108,7 @@ Everything that gets will be in a form of an array containing:
 statusCode   :  200 or 400 or status code
 reasonPhrase :  just a phrase that goes with the status code
 callLimit    :  HTTP_X_SHOPIFY_SHOP_API_CALL_LIMIT
-data         :  expected response data shopify returns
+????         :  expected response data shopify returns
 ```
 
 
