@@ -1,0 +1,21 @@
+{
+    "name": "bryanyeh/shopify-laravel",
+    "description": "Shopify API for Laravel 5.4 using Guzzle",
+    "license": "MIT",
+    "keywords": ["laravel", "api", "shopify", "guzzle"],
+    "authors": [
+        {
+            "name": "B Y",
+            "email": "BryanYeh@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0",
+        "guzzlehttp/guzzle": "^6.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Bryanyeh\\": "src/"
+        }
+    }
+}
