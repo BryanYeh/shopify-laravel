@@ -4,12 +4,12 @@ namespace Bryanyeh\Shopify\Exceptions;
 
 use Exception;
 
-class InvalidSignatureException extends Exception
+class InvalidMethodRequestException extends Exception
 {
     /**
      * The exception description.
      *
      * @var string
      */
-    protected $message = 'This request does not contain a valid signature.';
+    protected $message = 'The method request is not valid, it must be GET/POST/PUT/DELETE';
 }

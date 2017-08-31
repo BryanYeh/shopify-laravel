@@ -3,8 +3,6 @@
 namespace Bryanyeh\Shopify\Middleware;
 
 use Closure;
-use Bryanyeh\Shopify\Exceptions\InvalidShopifyDomainException;
-use Bryanyeh\Shopify\Exceptions\InvalidSignatureException;
 
 class VerifyProxy
 {
@@ -17,12 +15,8 @@ class VerifyProxy
      */
     public function handle($request, Closure $next)
     {
-        if(!$this->isShopifyDomain($request->input('shop'))){
-            throw new InvalidShopifyDomainException();
-        }
-
-        if(!$this->validateSignature($request)){
-            throw new InvalidSignatureException();
+        if(!$this->isShopifyDomain($request->input('shop')) || !$this->validateSignature($request)){
+            return response(401);
         }
             
         return $next($request);

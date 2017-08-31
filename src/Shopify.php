@@ -3,7 +3,7 @@
 namespace Bryanyeh\Shopify;
 
 use GuzzleHttp\Client;
-use Bryanyeh\Shopify\Exceptions\InvalidMethodRequest;
+use Bryanyeh\Shopify\Exceptions\InvalidMethodRequestException;
 
 class Shopify
 {
@@ -74,7 +74,7 @@ class Shopify
         $allowedMethods = ['POST','GET','PUT','DELETE'];
 
         if(!in_array($method,$allowedMethods)){
-            throw new InvalidMethodRequest();
+            throw new InvalidMethodRequestException();
         }
         return $this->request($method,trim($args[0]),$args[1] ?? []);
     }

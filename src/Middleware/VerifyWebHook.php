@@ -3,7 +3,6 @@
 namespace Bryanyeh\Shopify\Middleware;
 
 use Closure;
-use Bryanyeh\Shopify\Exceptions\InvalidWebhookException;
 
 class VerifyWebHook
 {
@@ -21,7 +20,7 @@ class VerifyWebHook
         $calculatedHmac = base64_encode(hash_hmac('sha256', $data, config('shopify.secret'), true));
 
         if($hmacHeader != $calculatedHmac){
-            throw new InvalidWebHookException();
+            return response(401);
         }
             
         return $next($request);

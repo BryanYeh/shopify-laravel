@@ -3,8 +3,6 @@
 namespace Bryanyeh\Shopify\Middleware;
 
 use Closure;
-use Bryanyeh\Shopify\Exceptions\InvalidShopifyDomainException;
-use Bryanyeh\Shopify\Exceptions\InvalidHmacException;
 
 class VerifyRequest
 {
@@ -17,12 +15,8 @@ class VerifyRequest
      */
     public function handle($request, Closure $next)
     {
-        if(!$this->isShopifyDomain($request->input('shop'))){
-            throw new InvalidShopifyDomainException();
-        }
-
-        if(!$this->validateHmac($request->all())){
-            throw new InvalidHmacException();
+        if(!$this->isShopifyDomain($request->input('shop')) || !$this->validateHmac($request->all())){
+            return redirect()->route('re-auth');
         }
             
         return $next($request);

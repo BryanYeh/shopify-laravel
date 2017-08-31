@@ -3,7 +3,6 @@
 namespace Bryanyeh\Shopify\Middleware;
 
 use Closure;
-use Bryanyeh\Shopify\Exceptions\InvalidNonceException;
 
 class VerifyNonce
 {
@@ -20,7 +19,7 @@ class VerifyNonce
             
             $request->session()->forget('nonce');
 
-            throw new InvalidNonceException();
+            return redirect()->route('re-auth');
         }
         return $next($request);
     }
