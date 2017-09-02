@@ -114,9 +114,9 @@ callLimit    :  HTTP_X_SHOPIFY_SHOP_API_CALL_LIMIT
 ```
 
 ### Middlewares
-- shopifywebhook returns 401 error when hmac is invalid
-- shopifyproxy returns 401 error when signature or domain are invalid
-- shopifynonce and shopifyrequest, will redirect to a named route ```re-auth```, with this you can decide what to do if either the nonce or request is invalid
+- ```shopifywebhook``` returns 401 error when hmac is invalid
+- ```shopifyproxy``` returns 401 error when signature or domain are invalid
+- ```shopifynonce``` and ```shopifyrequest```, will redirect to a named route ```re-auth```, with this you can decide what to do if either the nonce or request is invalid
 
 
 
@@ -132,4 +132,4 @@ This package throws only 1 exception.
 
 
 ## License
-Laravel Shopify is licensed under [MIT License (MIT)](license.md).
+Laravel Shopify is licensed under [MIT License (MIT)](LICENSE.md).
