@@ -10,7 +10,7 @@ This package is only for Laravel integration with Shopify's API to make a public
 ## Installation
 Using command line
 ```
-composer require bryanyeh/shopify-laravel 1.0
+composer require bryanyeh/shopify-laravel 1.10
 ```
 
 
